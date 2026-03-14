@@ -5,6 +5,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const NAV_ITEMS = [
   { href: "/", label: "Interaction" },
   { href: "/blog", label: "Blog" },
@@ -22,7 +24,7 @@ export function Header() {
         style={{ justifyContent: "space-between" }}
       >
         <Link href="/" className="flex items-center gap-0 h-[60px] py-3">
-          <Image src="/logo.svg" alt="TeamSparta" width={160} height={32} className="h-auto" />
+          <Image src={`${basePath}/logo.svg`} alt="TeamSparta" width={160} height={32} className="h-auto" />
           <span style={{ fontSize: 24, fontWeight: 800, fontFamily: "Pretendard", lineHeight: 1 }}>
             DESIGN
           </span>

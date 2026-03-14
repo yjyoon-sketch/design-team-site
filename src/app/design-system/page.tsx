@@ -4,12 +4,14 @@ import Image from "next/image";
 import { Flex } from "@teamsparta/stack-flex";
 import { Text } from "@teamsparta/stack-text";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function DesignSystemPage() {
   return (
     <section className="flex-1 flex items-center justify-center min-h-[calc(100vh-200px)]">
       <Flex direction="column" align="center" gap="8" className="px-6">
         <Image
-          src="/under-construction.png"
+          src={`${basePath}/under-construction.png`}
           alt="준비 중"
           width={180}
           height={180}
