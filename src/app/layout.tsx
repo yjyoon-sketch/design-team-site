@@ -22,6 +22,8 @@ function LayoutInner({ children }: { children: React.ReactNode }) {
   );
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function RootLayout({
   children,
 }: {
@@ -37,13 +39,13 @@ export default function RootLayout({
         />
         <meta property="og:title" content="팀스파르타 디자인팀" />
         <meta property="og:description" content="AI시대, 미래를 돌파하는 디자인팀" />
-        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image" content={`${basePath}/og-image.png`} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="팀스파르타 디자인팀" />
         <meta name="twitter:description" content="AI시대, 미래를 돌파하는 디자인팀" />
-        <meta name="twitter:image" content="/og-image.png" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <meta name="twitter:image" content={`${basePath}/og-image.png`} />
+        <link rel="icon" href={`${basePath}/favicon.png`} type="image/png" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
